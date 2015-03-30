@@ -1,9 +1,10 @@
 #' Create a correlation matrix with a given size and correlation
 #' 
-#' This function takes in input an integer indicating the number of rows
-#' (and columns, since the matrix is symmetrical) and a real number
-#' indicating the pairwise correlation. It then returns a $n \times n$ 
-#' matrix with ones on the diagonal and $\rho$ off the diagonal
+#' This function takes in input an integer \code{n} indicating the
+#' number of rows (and columns, since the matrix is symmetrical) 
+#' and a real number indicating the pairwise correlation. It then
+#' returns a \code{n x n} matrix with ones on the diagonal and 
+#' \code{rho} off the diagonal
 #' @title Create a correlation matrix
 #' @param size. Integer, the number of rows (columns) of the matrix.
 #' @param rho. Real, the pairwise correlation coefficient.
