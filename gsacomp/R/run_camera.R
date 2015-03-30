@@ -8,8 +8,8 @@
 ##' @return a list containing the expression matrix X, the class
 ##' vector y, and the list of gene sets `genesets`
 ##' @author Giovanni d'Ario
-createInputList <- function(sizes, rho, nsamples) {
-    X <- createGeneExpressionMatrix(sizes = sizes, rho = rho,
+create_input_list <- function(sizes, rho, nsamples) {
+    X <- create_gene_expression_matrix(sizes = sizes, rho = rho,
                                     nsamples = nsamples)
     ## rownames(X) <- paste0("g", 1:nrow(X))
     y <- gl(n = 2, k = nsamples/2, labels = c("A", "B"))
@@ -30,7 +30,7 @@ createInputList <- function(sizes, rho, nsamples) {
 ##' @param inputList list, output of \code{createCameraInput}
 ##' @return a data frame containing the output of camera
 ##' @author Giovanni d'Ario
-runCamera <- function(inputList) {
+run_camera <- function(inputList) {
     require(limma)
     design <- model.matrix(~ inputList$y)
     cameraOut <- camera(inputList$X, inputList$index, design)

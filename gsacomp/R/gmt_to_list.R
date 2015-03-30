@@ -9,7 +9,7 @@
 ##' @param gmtFile full path to the GMT file
 ##' @return an R list where each component is a gene set
 ##' @author Giovanni d'Ario
-gmtToList <- function(gmtFile) {
+gmt_to_list <- function(gmtFile) {
     gmt <- scan(gmtFile, sep = "\n", what = "character")
     gmt <- lapply(gmt, strsplit, split = "\t")
     unlist(gmt, recursive = FALSE)

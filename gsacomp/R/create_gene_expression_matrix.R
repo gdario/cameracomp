@@ -10,9 +10,9 @@
 ##' @return a simulated expression matrix
 ##' @author Giovanni d'Ario
 ##' @export
-createGeneExpressionMatrix <- function(sizes, rho, nsamples) {
+create_gene_expression_matrix <- function(sizes, rho, nsamples) {
     require(MASS)
-    S <- createBlockCorrelationMatrix(sizes = sizes, rho = rho)
+    S <- create_block_matrix(sizes = sizes, rho = rho)
     X <- mvrnorm(n = nsamples, mu = rep(0, nrow(S)), Sigma = S)
     return(t(X))
 }

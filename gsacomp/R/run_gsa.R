@@ -7,7 +7,7 @@
 ##' @return a data frame containing the output of limma on the simulated
 ##' dataset
 ##' @author Giovanni d'Ario
-createGsaInput <- function(inputList, adj) {
+create_gsa_input <- function(inputList, adj) {
     require(limma)
     design <- model.matrix(~ inputList$y)
     fit <- lmFit(inputList$X, design)
@@ -32,11 +32,11 @@ createGsaInput <- function(inputList, adj) {
 ##' @param adj 
 ##' @return no value returned, but as a side effect gsa.py is run
 ##' @author Giovanni d'Ario
-runGsa <- function(inputList, resultDir, prefix, adj=TRUE) {
-    inputfile <- createGsaInput(inputList, adj = adj)
+run_gsa <- function(inputList, resultDir, prefix, adj=TRUE) {
+    inputfile <- create_gsa_input(inputList, adj = adj)
     write.table(inputfile, file = file.path(resultDir, "infile.txt"),
                 sep = "\t", quote = FALSE, row.names = FALSE)
-    gmt <- listToGmt(x = inputList$index,
+    gmt <- list_to_gmt(x = inputList$index,
                      gmtFile = file.path(resultDir, "gmtfile.gmt"))
     gmtfile <- file.path(resultDir, "gmtfile.gmt")
     infile <- file.path(resultDir, "infile.txt")

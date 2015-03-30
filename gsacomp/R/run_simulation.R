@@ -19,7 +19,7 @@
 ##' from gsa.py
 ##' @author Giovanni d'Ario
 ##' @export
-runSimulation <- function(sizes, rho, nsamples, resultDir=NULL, B) {
+run_simulation <- function(sizes, rho, nsamples, resultDir=NULL, B) {
 
     if (is.null(resultDir))
         resultDir <- paste0("results_", rho, "_b_", B)
@@ -28,11 +28,11 @@ runSimulation <- function(sizes, rho, nsamples, resultDir=NULL, B) {
     
     out <- lapply(1:B, function(i) {
         message(paste("B =", i))
-        inputList <- createInputList(sizes = sizes,
+        inputList <- create_input_list(sizes = sizes,
                                      rho = rho,
                                      nsamples = nsamples)
-        res <- runCamera(inputList)
-        runGsa(inputList, adj = TRUE, resultDir = resultDir, prefix = i)
+        res <- run_camera(inputList)
+        run_gsa(inputList, adj = TRUE, resultDir = resultDir, prefix = i)
         return(res)
     })
     message("Simulation complete")
@@ -40,7 +40,7 @@ runSimulation <- function(sizes, rho, nsamples, resultDir=NULL, B) {
     return(invisible(out))
 }
 
-cleanAll <- function(resultDir) {
+clean_all <- function(resultDir) {
     txtFiles <- file.path(resultDir, "*.txt")
     gmtFiles <- file.path(resultDir, "*.gmt")
     rdataFiles <- file.path(resultDir, "*.RData")
