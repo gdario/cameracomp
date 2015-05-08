@@ -1,9 +1,0 @@
-Package: gsacomp
-Title: Functions for testing gene set enrichment methods
-Version: 0.0.0.9000
-Authors@R: person("Giovanni", "d'Ario", , "giovanni.dario@novartis.com", role = c("aut", "cre"))
-Description: This package contains functions to create artificial datasets to be tested by gene set enrichment methods
-Depends: R (>= 3.1.0)
-License: GPL-2
-LazyData: true
-Suggests: testthat
