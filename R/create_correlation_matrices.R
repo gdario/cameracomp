@@ -13,7 +13,7 @@
 #' m <- create_correlation_matrix(size = 5, rho = .2)
 #' @author Giovanni d'Ario
 create_correlation_matrix <- function(size, rho) { 
-    if (rho < 0 | rho > 1)
+    if (rho < 0 || rho > 1)
         stop("rho must be a number beetween 0 and 1")
     M <- matrix(rho, nrow = size, ncol = size)
     diag(M) <- 1

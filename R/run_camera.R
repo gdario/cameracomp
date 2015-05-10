@@ -1,5 +1,4 @@
 ##' Create the input list for Camera and GSA
-##'
 ##' 
 ##' @title Create a simulated input for Camera and GSA
 ##' @param sizes integer vector, the sizes of the 
