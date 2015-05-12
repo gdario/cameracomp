@@ -30,9 +30,8 @@ create_input_list <- function(sizes, rho, nsamples) {
 ##' @return a data frame containing the output of camera
 ##' @author Giovanni d'Ario
 run_camera <- function(inputList) {
-    require(limma)
     design <- model.matrix(~ inputList$y)
-    cameraOut <- camera(inputList$X, inputList$index, design)
+    cameraOut <- limma::camera(inputList$X, inputList$index, design)
     return(cameraOut)
 }
 
