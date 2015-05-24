@@ -12,8 +12,10 @@
 ##' @return a simulated expression matrix
 ##' @author Giovanni d'Ario
 ##' @export
-create_gene_expression_matrix <- function(sizes, rho, nsamples) {
+create_gene_expression_matrix <- function(sizes,
+                                          rho,
+                                          n_samples) {
     S <- create_block_matrix(sizes = sizes, rho = rho)
-    X <- MASS::mvrnorm(n = nsamples, mu = rep(0, nrow(S)), Sigma = S)
+    X <- MASS::mvrnorm(n = n_samples, mu = rep(0, nrow(S)), Sigma = S)
     return(t(X))
 }
