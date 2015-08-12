@@ -42,6 +42,7 @@
 #' @param rho Real. The intra-set correlation.
 #' @param logfc Real. The average fold change in the differentially
 #' expressed genes.
+#' @export
 #' @author <Giovanni d'Ario giovanni.dario@@novartis.com>
 #' @examples 
 #' input_list <- create_de_gene_sets(n_de_sets = 5, rho = 0.1)

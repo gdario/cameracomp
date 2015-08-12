@@ -12,7 +12,6 @@ vignette: >
 knitr::opts_chunk$set(echo=FALSE)
 ```
 
-
 # The T-test
 
 The t-test an its variants are by far the most frequently used statistical test. In the plot below we have simulated 10000 datasets. Each dataset is composed by two samples, each containing 10 independent observations. The observations are drawn from the same gaussian distribution with zero mean and unit variance. The plot below show the distribution of the 10000 p-values obtained from the test.
